@@ -5,5 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      let humanScore = 0;
+      let computerScore = 0;
+
+      function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+        switch (randomNumber) {
+          case 1:
+            return "rock";
+            break;
+          case 2:
+            return "paper";
+            break;
+          case 3:
+            return "scissors";
+            break;
+        }
+      }
+      console.log(getComputerChoice());
+
+      function getHumanChoice() {
+        let choice = prompt("Choose Rock, Paper or scissors");
+        let res = "";
+        if (choice.toLowerCase() == "paper") {
+          res = "paper";
+        } else if (choice.toLowerCase() == "rock") {
+          res = "rock";
+        } else if (choice.toLowerCase() == "scissors") {
+          res = "scissors";
+        } else res = "Invalid Choice";
+        return res;
+      }
+
+      function playRound() {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        console.log(humanChoice);
+        if (humanChoice === computerChoice) {
+          console.log("It's a tie");
+        }
+        if (
+          (humanChoice === "rock" && computerChoice === "scissors") ||
+          (humanChoice === "paper" && computerChoice === "rock") ||
+          (humanChoice === "scissors" && computerChoice === "paper")
+        ) {
+          humanScore++;
+          console.log("Human wins");
+        }
+        if (
+          (computerChoice === "rock" && humanChoice === "scissors") ||
+          (computerChoice === "scissors" && humanChoice === "paper") ||
+          (computerChoice === "paper" && humanChoice === "rock")
+        ) {
+          computerScore++;
+          console.log("Computer wins");
+        }
+      }
+
+      playRound();
+    </script>
+  </body>
 </html>
