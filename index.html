@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <script src="game.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
+    </style>
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body align="center">
+    <header class="header">
+      <h1>Rock Paper Scissors</h1>
+    </header>
     <div class="scoreboard">
       <h2 class="score-info" id="scoreInfo">Choose your weapon</h2>
       <h3 class="score-message" id="scoreMessage">
@@ -33,6 +45,18 @@
       <button id="scissorsBtn">
         <div class="sign">✌</div>
       </button>
+    </div>
+    <div class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        RamiHsasna
+      </p>
+      <a href="https://github.com/RamiHsasna" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
     </div>
   </body>
 </html>
